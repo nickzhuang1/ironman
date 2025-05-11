@@ -80,11 +80,11 @@ Type: kubernetes
 - 外部IP是AWS提供的DNS：`a81124d1de99711e9a6660a7201ce556-1276776701.ap-southeast-1.elb.amazonaws.com`
 - Port的部分：它會將你對該DNS的瀏覽請求轉發到`30256`這邊
 ```
-    $kubectl get svc
-    NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                                    PORT(S)        AGE
-    kubernetes   ClusterIP      10.100.0.1      <none>                                                                         443/TCP        4h54m
-    nginx        LoadBalancer   10.100.242.84   a81124d1de99711e9a6660a7201ce556-1276776701.ap-southeast-1.elb.amazonaws.com   80:30256/TCP   10s
-    $kubectl set image deploy/nginx nginx=openresty/openresty:alpine
+$kubectl get svc
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                                    PORT(S)        AGE
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                         443/TCP        4h54m
+nginx        LoadBalancer   10.100.242.84   a81124d1de99711e9a6660a7201ce556-1276776701.ap-southeast-1.elb.amazonaws.com   80:30256/TCP   10s
+$kubectl set image deploy/nginx nginx=openresty/openresty:alpine
 ```
 ### 瀏覽器測試
 
@@ -121,8 +121,8 @@ Deployment的設定：
 - containerPort改成`2015`
 
 ```    
-    $kubectl edit deploy/nginx
-    deployment.extensions/nginx edited
+$kubectl edit deploy/nginx
+deployment.extensions/nginx edited
 ```
 ![https://ithelp.ithome.com.tw/upload/images/20191010/20120468gckwi22acn.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468gckwi22acn.png)
 
