@@ -21,15 +21,15 @@ Type: kubernetes
 
 - Volume模式：會在Docker空間額外建立一個與本地對應的區域
 
-![](https://docs.docker.com/storage/images/types-of-mounts-volume.png)
+![](https://docker-docs.uclv.cu/storage/images/types-of-mounts-volume.png)
 
 - bind mount模式：這個模式是直接把掛載與本地端檔案系統綁定，可以操作的選項比Volume模式少
 
-![](https://docs.docker.com/storage/images/types-of-mounts-bind.png)
+![](https://docker-docs.uclv.cu/storage/images/types-of-mounts-bind.png)
 
 - tmpfs mount：掛載到記憶體中，暫存的，處理機敏資料或是測試資料用
 
-![](https://docs.docker.com/storage/images/types-of-mounts-tmpfs.png)
+![](https://docker-docs.uclv.cu/storage/images/types-of-mounts-tmpfs.png)
 
 以上三種模式，接著我們介紹Persistent Volume供比較，給個例子：
 
@@ -288,7 +288,7 @@ Type: kubernetes
 
 接著我們開啟瀏覽器，檢視http://192.168.99.100:30080/adminer.php
 
-![](_2019-09-30_2-bcf2851d-b13e-42f9-b4a3-8118e66c60fa.58.45.png)
+![](2019-09-30_2-bcf2851d-b13e-42f9-b4a3-8118e66c60fa.58.45.png)
 
 OK，可以透過網頁操作並設置MySQL資料庫，測試成功！
 
