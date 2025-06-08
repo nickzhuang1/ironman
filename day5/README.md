@@ -5,7 +5,7 @@ Type: kubernetes
 
 # 前言
 
-今天我們來談一下關於k8s的架構，這個觀點是從節點的角度去觀察的，也就是Node，當然早在前面我們有先提過一些，[小複習：k8s的基礎架構](https://github.com/x1y2z3456/ironman/blob/master/day1/README.md)，在這個章節，我們來詳細說下Node的架構。
+今天我們來談一下關於k8s的架構，這個觀點是從節點的角度去觀察的，也就是Node，當然早在前面我們有先提過一些，[小複習：k8s的基礎架構](https://github.com/x1y2z3456/ironman/tree/master/day1)，在這個章節，我們來詳細說下Node的架構。
 
 # Node是什麼？
 
