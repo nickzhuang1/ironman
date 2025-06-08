@@ -16,9 +16,9 @@ Type: kubernetes
 
 複習傳送門：
 
-- [[Day14] k8s管理篇（一）：Monitoring、Job、CronJob](https://github.com/x1y2z3456/ironman/blob/master/day14/README.md)
-- [[Day15] k8s管理篇（二）：Resource Quota、Namespaces](https://github.com/x1y2z3456/ironman/blob/master/day15/README.md)
-- [[Day17] k8s管理篇（三）：User Management、RBAC、Node Ｍaintenance](https://github.com/x1y2z3456/ironman/blob/master/day17/README.md)
+- [[Day14] k8s管理篇（一）：Monitoring、Job、CronJob](https://github.com/x1y2z3456/ironman/tree/master/day14)
+- [[Day15] k8s管理篇（二）：Resource Quota、Namespaces](https://github.com/x1y2z3456/ironman/tree/master/day15)
+- [[Day17] k8s管理篇（三）：User Management、RBAC、Node Ｍaintenance](https://github.com/x1y2z3456/ironman/tree/master/day17)
 
 # 管理篇（上）
 
@@ -88,7 +88,7 @@ $kubectl set image deploy/nginx nginx=openresty/openresty:alpine
 ```
 ### 瀏覽器測試
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468WhgSHHvF45.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468WhgSHHvF45.png)
+![](_2019-10-08_2-184ee2c7-3ced-49eb-b348-ef4161860743.49.05.png)
 
 ### Scale down Deployment
 
@@ -109,7 +109,7 @@ $kubectl set image deploy/nginx nginx=openresty/openresty:alpine
 
 ### 刷新頁面
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/201204687w9CNElBY9.png](https://ithelp.ithome.com.tw/upload/images/20191010/201204687w9CNElBY9.png)
+![](_2019-10-08_2-d887d05f-f7d5-46f0-bf54-025557276be5.53.55.png)
 
 有變成新的頁面囉！
 
@@ -124,19 +124,19 @@ Deployment的設定：
 $kubectl edit deploy/nginx
 deployment.extensions/nginx edited
 ```
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468gckwi22acn.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468gckwi22acn.png)
+![](_2019-10-09_11-ebba6ce2-5f47-4d0c-954b-7360865bab87.27.30.png)
 
 Service的設定：
 
 - 將targetPort改成`2015`
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468mG88SukOoY.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468mG88SukOoY.png)
+![](_2019-10-09_11-ca42021e-a540-443d-a18f-45f19fce3d13.28.19.png)
 
 稍等一段時間，約莫1分鐘
 
 ### 刷新頁面
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468B0qqDTBujo.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468B0qqDTBujo.png)
+![](_2019-10-09_11-be5ba215-a6ce-469b-8849-673e33a05d86.29.00.png)
 
 有了！原來我們除了可以透過修改image外，也可以更改port的轉發規則，重新導向到別的服務上。
 
@@ -292,17 +292,17 @@ EKS在RBAC的設置預設是啟動的，所以不用像minikube要重新啟動�
 
 輸入：[http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login)
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468PeDNApjA8r.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468PeDNApjA8r.png)
+![](_2019-10-10_3-afca206f-daf2-4839-a936-9076a2cb5aa1.21.17.png)
 
 登入後可看到Dashboard！
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468CocxdhVf4j.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468CocxdhVf4j.png)
+![](_2019-10-10_3-dc8a71be-d442-42df-b82d-e7d4ea9aae7e.08.22.png)
 
 OK，測試成功，我們進到下一步。
 
 ### 安裝WeaveScope
 
-透過YAML安裝（這版的k8s比較舊所以可以直接套用，如果版本太新沒法用的話請參考[這裡](https://www.notion.so/k8s-Monitoring-Job-CronJob-ddcbf117e6ed49bbb2d4d2b1dbd39021)
+透過YAML安裝（這版的k8s比較舊所以可以直接套用，如果版本太新沒法用的話請參考[這裡](https://github.com/x1y2z3456/ironman/tree/master/day14)
 
     $kubectl apply -f 'https://cloud.weave.works/k8s/scope.yaml' -n weave
     namespace/weave created
@@ -326,7 +326,7 @@ OK，測試成功，我們進到下一步。
 
 接著在VirtualBox裡面打開瀏覽器
 
-![https://ithelp.ithome.com.tw/upload/images/20191010/20120468lvs6J2Clmo.png](https://ithelp.ithome.com.tw/upload/images/20191010/20120468lvs6J2Clmo.png)
+![](_2019-10-10_4-24c77df7-79e8-42d0-a745-ce4870b509a7.14.08.png)
 
 有了！可以用囉～
 
