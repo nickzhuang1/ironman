@@ -362,7 +362,7 @@ X.509是密碼學裡公鑰憑證的格式標準
 
 # Node Ｍaintenance
 
-這個部分前面有稍微提過，就是關於[k8s管理篇初體驗](https://ithelp.ithome.com.tw/articles/10218001)那邊，我們有稍稍操作到了一些管理Node的方法，這邊我們更進一步，來測試一下在Node管理階段的時候，在該Node上的元件會有哪些預期行為。
+這個部分前面有稍微提過，就是關於[k8s管理篇初體驗](https://github.com/x1y2z3456/ironman/tree/master/day5)那邊，我們有稍稍操作到了一些管理Node的方法，這邊我們更進一步，來測試一下在Node管理階段的時候，在該Node上的元件會有哪些預期行為。
 
 ## 管理三劍客：Drain、Cordon、Uncordon
 
