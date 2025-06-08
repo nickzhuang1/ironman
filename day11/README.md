@@ -271,7 +271,7 @@ OK，這是示例是要把近來的連線導到同一個host底下的不同的Se
     pod/nodehelloworld.example2.com created
     service/helloworld-v2 created
 
-注意到這裡的Service與[之前](https://github.com/x1y2z3456/ironman/blob/master/day9/README.md)用命令列設置的方式不同，是用YAML去設置的（標準做法）
+注意到這裡的Service與[之前](https://github.com/x1y2z3456/ironman/tree/master/day9)用命令列設置的方式不同，是用YAML去設置的（標準做法）
 
 ingress+pod*2+service*2都開好後，我們來做個小測試！
 
