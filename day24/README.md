@@ -42,7 +42,7 @@ Elastic Compute Cloud（EC2） ，是由[亞馬遜公司](https://zh.wikipedia.o
 
 在這裡可以看到
 
-![https://ithelp.ithome.com.tw/upload/images/20191009/20120468DfQPY8oVwm.png](https://ithelp.ithome.com.tw/upload/images/20191009/20120468DfQPY8oVwm.png)
+![](_2019-10-09_2-02522900-cb6f-41a7-9224-07ada34e9ebb.21.16.png)
 
 我們前面有提過，主節點是看不到的，也就是Master，因為它是由EKS所管理。
 
