@@ -19,7 +19,7 @@ Type: kubernetes
 
 要使用Helm，那麼我們就要先安裝Helm
 
-複習傳送門：[[Day18] k8s之管理篇延伸：兩個H的小故事：Harbor與Helm](https://ithelp.ithome.com.tw/articles/10224116)
+複習傳送門：[[Day18] k8s之管理篇延伸：兩個H的小故事：Harbor與Helm](https://github.com/x1y2z3456/ironman/tree/master/day18)
 
 ## 安裝Helm
 
