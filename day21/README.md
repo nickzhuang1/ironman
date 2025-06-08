@@ -9,7 +9,7 @@ Type: kubernetes
 
 下篇的部分：kubectl的安裝與設置、登入EC2的工作節點（Today）
 
-昨天我們看了上篇，今天我們延續[上篇](https://ithelp.ithome.com.tw/articles/10224889)的內容，開始介紹下篇的部分，沒看過上篇的朋友，務必先看過。
+昨天我們看了上篇，今天我們延續[上篇](https://github.com/x1y2z3456/ironman/tree/master/day20)的內容，開始介紹下篇的部分，沒看過上篇的朋友，務必先看過。
 
 # kubectl的安裝與設置
 
@@ -19,7 +19,7 @@ Type: kubernetes
 
 理想的情況下，是把minikube設置在本地電腦，而AWS群集是在區網內的另外一台電腦可見、可操作，提供一個小型的集成開發環境。
 
-對於不太熟悉虛擬機和一般作業系統差異的朋友，可以參考：[第二天的內容](https://ithelp.ithome.com.tw/articles/10216560)
+對於不太熟悉虛擬機和一般作業系統差異的朋友，可以參考：[第二天的內容](https://github.com/x1y2z3456/ironman/tree/master/day2)
 
 因為筆者之前在mac OS的機器上已經裝了minikube，為了保證環境的隔離性，就另外裝了VirtualBox，並在裡面新增了Ubuntu的環境，因此接下來的操作，都是在該環境內進行的，請特別留意。
 
@@ -39,31 +39,31 @@ Type: kubernetes
 
 ### 確認ubuntu的ip
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/2012046815asaFMF9J.png](https://ithelp.ithome.com.tw/upload/images/20191006/2012046815asaFMF9J.png)
+![](_2019-10-06_2-f0250dfe-81c6-4e39-a019-5f2f9cb7d1ff.57.03.png)
 
 可以注意到ip是172.20.10.5，而網路介面是enp0s3
 
 ### 將ssh的service安裝到ubuntu
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468dJAJhzbEEf.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468dJAJhzbEEf.png)
+![](_2019-10-06_3-c26bed84-423b-48b6-84f7-2498d66aa43d.04.52.png)
 
 ### 確認ssh的service狀態
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468OMPIDhaoxp.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468OMPIDhaoxp.png)
+![](_2019-10-06_3-88d62bf5-4744-4964-9cb0-e78f18a22696.06.01.png)
 
 OK，確認無誤，我們先把Ubuntu關掉
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468ytN5w2epk3.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468ytN5w2epk3.png)
+![](_2019-10-06_3-43963d4d-7ac9-42d4-a55d-17eccbfc6ace.43.30.png)
 
 ### 設置VirtualBox的網路
 
 網卡一：
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468xtWXt4u6Hk.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468xtWXt4u6Hk.png)
+![](_2019-10-06_3-4552cea1-4bbb-4355-bdf7-5b8ddd707041.45.37.png)
 
 網卡二：
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468fXcbzrwnP0.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468fXcbzrwnP0.png)
+![](_2019-10-06_3-5af45558-33eb-4ca1-b53f-c5cb63d9fff5.45.45.png)
 
 接著啟動VirtualBox，直接把那個畫面縮小
 
@@ -163,7 +163,7 @@ OK，可以用了，相信有人注意到這個IP是跟minikube的ip是一樣的
 
 ### 檢查Token
 
-這邊我們透過剛安裝的authenticator去驗證，###的部分在[之前](https://ithelp.ithome.com.tw/articles/10224506)下載的accessKeys.csv裡面
+這邊我們透過剛安裝的authenticator去驗證，###的部分在[之前](https://github.com/x1y2z3456/ironman/tree/master/day19)下載的accessKeys.csv裡面
 
     $vim ~/.aws/credentials
     [default]
@@ -246,43 +246,43 @@ OK，設置到這邊就結束囉！我們看一個Topic～
 
 先回到AWS Management Console，進到CloudFormation
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/201204687zeEHiOzU6.png](https://ithelp.ithome.com.tw/upload/images/20191006/201204687zeEHiOzU6.png)
+![](_2019-10-06_10-547fdb3c-6f93-40f6-8e03-b09edbbac3d9.05.15.png)
 
 接著新增一個Stack，這個Stack是Node Group
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468JYYm0gkY2i.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468JYYm0gkY2i.png)
+![](_2019-10-06_10-e65ab44c-cf34-4b66-ba34-be70542d6dd2.14.27.png)
 
 其中的eks-nodegroup.yaml可以從[這裡](https://www.dropbox.com/s/4arr5xa6w2wovbw/eks-nodegroup.yaml?dl=0)下載
 
 再來是一些其他參數的設定
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468Is10ryBJ5q.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468Is10ryBJ5q.png)
+![](_2019-10-06_10-70091add-ceb7-4d81-b454-2469b79d81b3.23.30.png)
 
 注意到AMI的部分，這個需要最佳化設定，參考[這裡](https://docs.aws.amazon.com/zh_tw/eks/latest/userguide/getting-started-console.html)
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468qTmThfn6Ws.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468qTmThfn6Ws.png)
+![](_2019-10-06_10-5375615e-5bb9-465d-9c2c-056457bbc13c.25.23.png)
 
 三個Subnet都要放上去
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/201204686PfntsUsbM.png](https://ithelp.ithome.com.tw/upload/images/20191006/201204686PfntsUsbM.png)
+![](_2019-10-06_10-1704bc40-f10c-4563-afa8-7dfed2f4bbce.26.40.png)
 
 大致這樣，好了下一步，按Next
 
 後面只是總覽，不用改，直接Create Stack就好
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/201204684SxiQWNKY7.png](https://ithelp.ithome.com.tw/upload/images/20191006/201204684SxiQWNKY7.png)
+![](_2019-10-06_10-608572a1-3e48-4415-8270-76d3c3f813c2.31.34.png)
 
 要稍等一下，好了之後我們去看一下EC2，那邊會有三台機器開起來
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468Kn7WXdgUev.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468Kn7WXdgUev.png)
+![](_2019-10-06_10-6fe5c921-a3c5-4cef-9880-07f8441f7698.36.02.png)
 
 我們到Security Group那邊的NodeGroup去加個SSH的設置
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468juBd7ti1lt.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468juBd7ti1lt.png)
+![](_2019-10-06_10-b9a72e3b-3584-4ea5-9f64-db6c08ae6dc3.40.15.png)
 
 檢查Instance的IP
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468r5WzE4KFKw.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468r5WzE4KFKw.png)
+![](_2019-10-06_10-9259140a-d689-4889-a334-c90bcfeb0376.59.26.png)
 
 這樣的話，就能利用前面的eks.pem連進去囉
 
@@ -311,7 +311,7 @@ OK，設置到這邊就結束囉！我們看一個Topic～
 
 其中<<role-arn-from-previous-step>>要換成下方反白內容
 
-![https://ithelp.ithome.com.tw/upload/images/20191006/20120468r7W5zN5VMY.png](https://ithelp.ithome.com.tw/upload/images/20191006/20120468r7W5zN5VMY.png)
+![](_2019-10-06_11-d725cf88-83b0-4b1d-8236-058d66706608.08.23.png)
 
 好了apply一下，官方有說這個檔案的其他內容最好不要亂動
 
